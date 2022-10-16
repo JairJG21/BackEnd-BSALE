@@ -19,7 +19,7 @@ routes.get('/productos', (req, res) => {
     req.getConnection((err, conn) => {
         if (err) return res.send(err);
 
-        conn.query('SELECT * FROM product WHERE url_image != "" || null ORDER BY name ASC', (err, rows) => {
+        conn.query('SELECT * FROM product WHERE url_image != "" || null ORDER BY name ASC LIMIT 6', (err, rows) => {
             if (err) return res.send(err);
 
             res.json(rows);
