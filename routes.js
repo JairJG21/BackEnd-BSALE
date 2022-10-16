@@ -19,7 +19,7 @@ routes.get('/productos', (req, res) => {
     req.getConnection((err, conn) => {
         if (err) return res.send(err);
 
-        conn.query('SELECT * FROM product WHERE url_image != "" || null ORDER BY name ASC LIMIT 6', (err, rows) => {
+        conn.query('SELECT * FROM product WHERE url_image != "" || null ORDER BY name ASC', (err, rows) => {
             if (err) return res.send(err);
 
             res.json(rows);
@@ -48,13 +48,13 @@ routes.get('/busquedaByCategorias/:id', (req, res) => {
         if (err) return res.send(err);
 
         if ([req.params.id] != 0) {
-            conn.query('SELECT * FROM product WHERE category = ? && url_image != "" || null LIMIT 6', [req.params.id], (err, rows) => {
+            conn.query('SELECT * FROM product WHERE category = ? && url_image != "" || null', [req.params.id], (err, rows) => {
                 if (err) return res.send(err);
 
                 res.json(rows);
             })
         }else {
-            conn.query('SELECT * FROM product WHERE url_image != "" || null ORDER BY name ASC LIMIT 6', (err, rows) => {
+            conn.query('SELECT * FROM product WHERE url_image != "" || null ORDER BY name ASC', (err, rows) => {
                 if (err) return res.send(err);
 
                 res.json(rows);
@@ -71,12 +71,12 @@ routes.get('/buscador/:busqueda', (req, res) => {
         if (err) return res.send(err);
             
         if([req.params.busqueda] != '-'){
-            conn.query("SELECT * FROM product WHERE name LIKE '%" + [req.params.busqueda] + "%' && url_image != '' || null ORDER BY name ASC LIMIT 6", (err, rows) => {
+            conn.query("SELECT * FROM product WHERE name LIKE '%" + [req.params.busqueda] + "%' && url_image != '' || null ORDER BY name ASC", (err, rows) => {
                 if (err) return res.send(err);
                 res.json(rows);
             })
         } else {
-            conn.query("SELECT * FROM product WHERE url_image != '' || null ORDER BY name ASC LIMIT 6", (err, rows) => {
+            conn.query("SELECT * FROM product WHERE url_image != '' || null ORDER BY name ASC", (err, rows) => {
                 if (err) return res.send(err);
                 res.json(rows);
             })
@@ -93,13 +93,13 @@ routes.get('/ordenarProducto/:orden/:categoria', (req, res) => {
         let categoria = [req.params.categoria];
 
         if (categoria != 0) {
-            conn.query("SELECT * FROM product WHERE category = "+categoria+" && url_image != '' || null ORDER BY name "+orden+" LIMIT 6",  (err, rows) => {
+            conn.query("SELECT * FROM product WHERE category = "+categoria+" && url_image != '' || null ORDER BY name "+orden+"",  (err, rows) => {
                     if (err) return res.send(err);
         
                     res.json(rows);
                 })
         }else {
-            conn.query('SELECT * FROM product WHERE url_image != "" || null ORDER BY name '+orden+' LIMIT 6', (err, rows) => {
+            conn.query('SELECT * FROM product WHERE url_image != "" || null ORDER BY name '+orden+'', (err, rows) => {
                 if (err) return res.send(err);
 
                 res.json(rows);
