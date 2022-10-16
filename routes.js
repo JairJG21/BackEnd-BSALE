@@ -71,7 +71,7 @@ routes.get('/buscador/:busqueda/:orden', (req, res) => {
         if (err) return res.send(err);
             
         if([req.params.busqueda] != '-'){
-            conn.query("SELECT * FROM product WHERE name LIKE '%" + [req.params.busqueda] + "%' && url_image != '' || null ORDER BY "+[req.params.orden]+"", (err, rows) => {
+            conn.query("SELECT * FROM product WHERE name LIKE '%" + [req.params.busqueda] + "%' && url_image != '' || null ORDER BY name "+[req.params.orden]+"", (err, rows) => {
                 if (err) return res.send(err);
                 res.json(rows);
             })
