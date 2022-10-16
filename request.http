@@ -1,2 +1,2 @@
 ###
-GET http://localhost:9000/api/e HTTP/1.1
+GET https://634b7cc86396932e0baa9309--animated-souffle-f83e5a.netlify.app/api HTTP/1.1
