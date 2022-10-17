@@ -17,24 +17,24 @@ El objetivo de esta API es poder consultar los diferentes productos que se encue
 
 Cuando el cliente quiere obtener todos los productos tiene que usar ***/productos*** de esta forma el servidor le devuelve todos los datos.
 
-![Obtener todos los productos](https://i.ibb.co/BVv4zjk/API-1.png)
+![Obtener todos los productos](https://i.ibb.co/xLX7Xgk/API-1.png)
 
 El cliente puede consultar todas las categorias usando ***/categorias***
 
-![Consultar todas las categorias](https://i.ibb.co/8sN6XXc/API-2.png)
+![Consultar todas las categorias](https://i.ibb.co/XpmgdzC/API-2.png)
 
 El cliente puede consultar los productos por categoria, utilizando ***/categoria/:id*** enviando el id en ***:id*** de la categoria para consultar los datos.
 
-![Consultar productos por categoria](https://i.ibb.co/TRtMRqB/API-3.png)
+![Consultar productos por categoria](https://i.ibb.co/s9xmwGw/API-3.png)
 
 Cuando el cliente quiere buscar un producto expecifico puede usar **/buscador/:busqueda*** enviando el nombre del producto a buscar en ***/busqueda***.
 
-![Consultando producto expecifico](https://i.ibb.co/FDFFywW/API-4.png)
+![Consultando producto expecifico](https://i.ibb.co/wdMD8xy/API-4.png)
 
 El cliente puede ordenar los productos alfabeticamente usando ***/ordenarProducto/:order/:categoria*** enviando en el ***/:order*** lo siguiente:
 
-- Si quieres ordenar de A-Z usas ***ASC***
-- Si quieres ordenar de Z-A usas ***DESC***
+- Si quieres ordenar de A-Z usas ***ASC***.
+- Si quieres ordenar de Z-A usas ***DESC***.
 
 En categorias puedes enviar lo siguiente:
 
@@ -46,6 +46,6 @@ En categorias puedes enviar lo siguiente:
 - Cerveza = ***6***
 - Vodka = ***7***
 
-**La categoria puede ser enviada o no**
+**La categoria puede ser enviada o no**.
 
-![Ordenar productos alfabeticamente y por categoria](https://i.ibb.co/89WrZPL/API-5.png)
+![Ordenar productos alfabeticamente y por categoria](https://i.ibb.co/V9dPNqp/API-5.png)
