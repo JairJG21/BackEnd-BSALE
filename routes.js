@@ -25,7 +25,6 @@ routes.get('/productos', (req, res) => {
             res.json(rows);
         })
     })
-
 })
 
 routes.get('/categorias', (req, res) => {
@@ -39,11 +38,9 @@ routes.get('/categorias', (req, res) => {
             res.json(rows);
         })
     })
-
 })
 
 routes.get('/busquedaByCategorias/:id', (req, res) => {
-
     req.getConnection((err, conn) => {
         if (err) return res.send(err);
 
@@ -62,7 +59,6 @@ routes.get('/busquedaByCategorias/:id', (req, res) => {
         }
 
     })
-
 })
 
 routes.get('/buscador/:busqueda', (req, res) => {
@@ -106,7 +102,6 @@ routes.get('/ordenarProducto/:orden/:categoria', (req, res) => {
             })
         }
     })
-
 })
 
 module.exports = routes;

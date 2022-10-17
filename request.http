@@ -1,5 +1,0 @@
-###
-GET https://serverbsale.herokuapp.com/api/buscador/e/ASC HTTP/1.1
-
-###
-GET https://localhost:9000/api/buscador/e/ASC HTTP/1.1
